@@ -31,7 +31,7 @@ class Auth extends CI_Controller
     public function registrasi()
     {
         $this->load->view('layout/auth_header');
-        $this->load->view('auth/registrasi');
+        $this->load->view('auth/login');
         $this->load->view('layout/auth_footer');
         if ($this->session->userdata('email')) {
             redirect('Kamera');

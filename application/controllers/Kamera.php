@@ -63,12 +63,13 @@ class Kamera extends CI_Controller
                 'sensor' => $this->input->post('sensor'),
                 'url' => $this->input->post('url'),
                 'deskripsi' => $this->input->post('deskripsi'),
+                'gambar' => $this->input->post('gambar'),
             ];
             $upload_image = $_FILES['gambar']['name'];
             if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size'] = '2048';
-                $config['upload_path'] = './assets/img/cam/';
+                $config['upload_path'] = './assets/demo/demo5/img/cam/';
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload('gambar')) {
                     $new_image = $this->upload->data('file_name');
@@ -77,7 +78,7 @@ class Kamera extends CI_Controller
                     echo $this->upload->display_errors();
                 }
             }
-            $this->Kamera_model->insert($data,$upload_image);
+            $this->Kamera_model->insert($data, $upload_image);
             $this->session->set_flashdata('message', '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-primary alert-dismissible fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>Data Kamera berhasil ditambahkan</div>');
             redirect('Kamera');
@@ -98,7 +99,7 @@ class Kamera extends CI_Controller
     {
         $this->Kamera_model->delete($id);
         $this->session->set_flashdata('message', '<div class="m-alert m-alert--outline m-alert--outline-2x alert alert-primary alert-dismissible fade show" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button> Data Lensa berhasil di Hapus</div>');
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button> Data Kamera berhasil di Hapus</div>');
         redirect('Kamera');
     }
 

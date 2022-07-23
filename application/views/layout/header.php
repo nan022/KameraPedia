@@ -75,7 +75,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<div class="m-stack__item m-brand">
 							<div class="m-stack m-stack--ver m-stack--general m-stack--inline">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
-									<a href="index.html" class="m-brand__logo-wrapper">
+									<a href="<?= base_url('Admin') ?>" class="m-brand__logo-wrapper">
 										<img alt="" src="<?= base_url('assets/') ?>demo/demo5/media/img/logo/camera1.png" />
 									</a>
 								</div>
