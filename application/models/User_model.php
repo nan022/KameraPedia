@@ -12,7 +12,7 @@ class User_model extends CI_Model
     {
         parent::__construct();
         $this->_client = new Client([
-            'base_uri' => 'http://localhost/rest_api_kamera/User'
+            'base_uri' => 'http://localhost/KameraPedia/rest_api_kamera/User'
         ]);
     }
     public function get()
